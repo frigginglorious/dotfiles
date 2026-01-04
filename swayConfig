@@ -11,7 +11,10 @@ input "type:keyboard" {
     xkb_options "ctrl:swap_lalt_lctl"
 }
 
-
+set $menu fuzzel
+#bindsym Print exec grim
+#bindsym Print exec gnome-screenshot
+bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
 
 ### Variables
 #
@@ -25,7 +28,7 @@ set $right l
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
-set $menu wmenu-run
+#set $menu wmenu-run
 
 ### Output configuration
 #
@@ -220,7 +223,7 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # bindsym Print exec grim
 
 #
 # Status Bar:
