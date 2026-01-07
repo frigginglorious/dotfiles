@@ -4,18 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-### MY CONFIG
-
-# Swap Left Alt (Mod1) and Left Ctrl (Control)
-input "type:keyboard" {
-    xkb_options "ctrl:swap_lalt_lctl"
-}
-
-set $menu fuzzel
-#bindsym Print exec grim
-#bindsym Print exec gnome-screenshot
-bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -36,7 +24,21 @@ set $term alacritty
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 
-#
+### MY CONFIG
+
+# Swap Left Alt (Mod1) and Left Ctrl (Control)
+input "type:keyboard" {
+    xkb_options "ctrl:swap_lalt_lctl"
+}
+
+set $menu fuzzel
+#bindsym Print exec grim
+#bindsym Print exec gnome-screenshot
+bindsym Print exec grim -g "$(slurp)" -t png - | wl-copy -t image/png
+
+bindsym $mod+Tab workspace back_and_forth
+
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
